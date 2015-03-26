@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employee-edit-btf">
+    <template-reference>
+      <document>/WEB-INF/task-flow-template.xml</document>
+      <id>task-flow-template</id>
+    </template-reference>
+    <default-activity>Person</default-activity>
+    <transaction>
+      <requires-existing-transaction/>
+    </transaction>
+    <view id="Person">
+      <page>/Person.jsff</page>
+      <train-stop>
+        <display-name>Person</display-name>
+      </train-stop>
+    </view>
+    <view id="Job">
+      <page>/Job.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Hr">
+      <page>/Hr.jsff</page>
+      <train-stop/>
+    </view>
+    <task-flow-return id="submit">
+      <outcome>
+        <name>submit</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancel">
+      <outcome>
+        <name>cancel</name>
+        <restore-save-point/>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>Hr</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>submit</from-outcome>
+        <to-activity-id>submit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
+<!-- 2015-03-26T08:50:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="emp_task" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e760c5b8-e838-4c20-b942-e8aac2757522">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IkVNUExPWUVFX1RBU0tTIiBBUyAsMTU1LDA7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString>
+		<![CDATA[SELECT "EMPLOYEE_TASKS"."FULL_NAME",
+	"EMPLOYEE_TASKS"."SECTION",
+	"EMPLOYEE_TASKS"."HIRE_DATE",
+	"EMPLOYEE_TASKS"."NUMBER_OF_EMPLOYEES",
+	"EMPLOYEE_TASKS"."TASK_1",
+	"EMPLOYEE_TASKS"."TASK_2",
+	"EMPLOYEE_TASKS"."TASK_3",
+	"EMPLOYEE_TASKS"."TASK_4",
+	"EMPLOYEE_TASKS"."TASK_5",
+	"EMPLOYEE_TASKS"."TASK_6",
+	"EMPLOYEE_TASKS"."TASK_8",
+	"EMPLOYEE_TASKS"."TASK_7",
+	"EMPLOYEE_TASKS"."TASK_9",
+	"EMPLOYEE_TASKS"."TASK_10",
+	"EMPLOYEE_TASKS"."TASK_11",
+	"EMPLOYEE_TASKS"."TASK_12",
+	"EMPLOYEE_TASKS"."TASK_OTHER",
+	"EMPLOYEE_TASKS"."SUGGESTIONS"
+FROM "EMPLOYEE_TASKS"]]>
+	</queryString>
+	<field name="FULL_NAME" class="java.lang.String"/>
+	<field name="SECTION" class="java.lang.String"/>
+	<field name="HIRE_DATE" class="java.sql.Timestamp"/>
+	<field name="NUMBER_OF_EMPLOYEES" class="java.math.BigDecimal"/>
+	<field name="TASK_1" class="java.lang.String"/>
+	<field name="TASK_2" class="java.lang.String"/>
+	<field name="TASK_3" class="java.lang.String"/>
+	<field name="TASK_4" class="java.lang.String"/>
+	<field name="TASK_5" class="java.lang.String"/>
+	<field name="TASK_6" class="java.lang.String"/>
+	<field name="TASK_8" class="java.lang.String"/>
+	<field name="TASK_7" class="java.lang.String"/>
+	<field name="TASK_9" class="java.lang.String"/>
+	<field name="TASK_10" class="java.lang.String"/>
+	<field name="TASK_11" class="java.lang.String"/>
+	<field name="TASK_12" class="java.lang.String"/>
+	<field name="TASK_OTHER" class="java.lang.String"/>
+	<field name="SUGGESTIONS" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

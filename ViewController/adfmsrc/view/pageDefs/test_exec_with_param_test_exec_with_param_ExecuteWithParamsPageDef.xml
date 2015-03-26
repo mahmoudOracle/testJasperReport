@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8"
+                id="test_exec_with_param_test_exec_with_param_ExecuteWithParamsPageDef" Package="view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees1" RangeSize="25" DataControl="AppModuleAmDataControl" id="Employees1Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Employees1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="deptIdVar" NDValue="#{pageFlowScope.depId}" NDType="java.lang.Integer"/>
+    </action>
+  </bindings>
+</pageDefinition>

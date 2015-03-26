@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employee-detail-btf">
+    <template-reference>
+      <document>/WEB-INF/task-flow-template.xml</document>
+      <id>task-flow-template</id>
+    </template-reference>
+    <default-activity>setdeptIdVar</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <isolated/>
+    </data-control-scope>
+    <input-parameter-definition id="__3">
+      <name>departmentIdParam</name>
+      <value>#{pageFlowScope.employeeDetailProcessBean.departmentIdParam}</value>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>employeeDetailProcessBean</managed-bean-name>
+      <managed-bean-class>view.beans.EmployeeDetailProcessBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__2">
+      <managed-bean-name>empDetailBean</managed-bean-name>
+      <managed-bean-class>view.beans.EmpDetailBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="EmployeesOverview">
+      <page>/EmployeesOverview.jsff</page>
+    </view>
+    <task-flow-call id="employee-edit-btf">
+      <task-flow-reference>
+        <document>/WEB-INF/employee-edit-btf.xml</document>
+        <id>employee-edit-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="setdeptIdVar">
+      <method>#{bindings.setdeptIdVar.execute}</method>
+      <outcome>
+        <fixed-outcome>setdeptIdVar</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__8">
+      <from-activity-id>EmployeesOverview</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>employee-edit-btf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>employee-edit-btf</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>EmployeesOverview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>EmployeesOverview</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>setdeptIdVar</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>setdeptIdVar</from-outcome>
+        <to-activity-id>ExecuteWithParams</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+    <visibility>
+      <url-invoke-disallowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>

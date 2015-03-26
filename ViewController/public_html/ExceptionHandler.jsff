@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:outputText value="Stack trace: #{controllerContext.currentViewPort.exceptionData.stackTrace}" id="ot3"/>
+    </f:facet>
+    <f:facet name="center">
+      <af:outputText value="Error Message: #{controllerContext.currentViewPort.exceptionData.message}" id="ot2"/>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:outputText value="Wow Something Went Wrong" id="ot1"
+                     inlineStyle="font-size:xx-large; text-align:center; color:Lime;"/>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

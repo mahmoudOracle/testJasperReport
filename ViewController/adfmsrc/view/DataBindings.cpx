@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/testPage.jsf" usageId="view_testPagePageDef"/>
+    <page path="/EmployeesOverview.jsff" usageId="view_EmployeesOverviewPageDef"/>
+    <page path="/Person.jsff" usageId="view_PersonPageDef"/>
+    <page path="/Job.jsff" usageId="view_JobPageDef"/>
+    <page path="/Hr.jsff" usageId="view_HrPageDef"/>
+    <page path="/Departments.jsf" usageId="view_DepartmentsPageDef"/>
+    <page path="/taskFLowADFInsider.jsf" usageId="view_untitled1PageDef"/>
+    <page path="/WEB-INF/employee-detail-btf.xml#employee-detail-btf@ExecuteWithParams"
+          usageId="view_employee_detail_btf_employee_detail_btf_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/employee-detail-btf.xml#employee-detail-btf@setdeptIdVar"
+          usageId="view_employee_detail_btf_employee_detail_btf_setdeptIdVarPageDef"/>
+    <page path="/testing.jsf" usageId="view_testingPageDef"/>
+    <page path="/WEB-INF/test-exec-with-param.xml#test-exec-with-param@ExecuteWithParams"
+          usageId="view_test_exec_with_param_test_exec_with_param_ExecuteWithParamsPageDef"/>
+    <page path="/emp.jsff" usageId="view_empPageDef"/>
+    <page path="/data.jsf" usageId="view_dataPageDef"/>
+    <page path="/detail.jsf" usageId="view_detailPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_testPagePageDef" path="view.pageDefs.testPagePageDef"/>
+    <page id="view_EmployeesOverviewPageDef" path="view.pageDefs.EmployeesOverviewPageDef"/>
+    <page id="view_PersonPageDef" path="view.pageDefs.PersonPageDef"/>
+    <page id="view_JobPageDef" path="view.pageDefs.JobPageDef"/>
+    <page id="view_HrPageDef" path="view.pageDefs.HrPageDef"/>
+    <page id="view_DepartmentsPageDef" path="view.pageDefs.DepartmentsPageDef"/>
+    <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
+    <page id="view_employee_detail_btf_employee_detail_btf_ExecuteWithParamsPageDef"
+          path="view.pageDefs.employee_detail_btf_employee_detail_btf_ExecuteWithParamsPageDef"/>
+    <page id="view_employee_detail_btf_employee_detail_btf_setdeptIdVarPageDef"
+          path="view.pageDefs.employee_detail_btf_employee_detail_btf_setdeptIdVarPageDef"/>
+    <page id="view_testingPageDef" path="view.pageDefs.testingPageDef"/>
+    <page id="view_test_exec_with_param_test_exec_with_param_ExecuteWithParamsPageDef"
+          path="view.pageDefs.test_exec_with_param_test_exec_with_param_ExecuteWithParamsPageDef"/>
+    <page id="view_empPageDef" path="view.pageDefs.empPageDef"/>
+    <page id="view_dataPageDef" path="view.pageDefs.dataPageDef"/>
+    <page id="view_detailPageDef" path="view.pageDefs.detailPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleAmDataControl" Package="model.AppModules"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleAmLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t1"/>
+  <af:panelFormLayout id="pfl1">
+    <af:inputText value="#{bindings.Salary.inputValue}" label="#{bindings.Salary.hints.label}"
+                  required="#{bindings.Salary.hints.mandatory}" columns="#{bindings.Salary.hints.displayWidth}"
+                  maximumLength="#{bindings.Salary.hints.precision}" shortDesc="#{bindings.Salary.hints.tooltip}"
+                  id="it1">
+      <f:validator binding="#{bindings.Salary.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.CommissionPct.inputValue}" label="#{bindings.CommissionPct.hints.label}"
+                  required="#{bindings.CommissionPct.hints.mandatory}"
+                  columns="#{bindings.CommissionPct.hints.displayWidth}"
+                  maximumLength="#{bindings.CommissionPct.hints.precision}"
+                  shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="it2">
+      <f:validator binding="#{bindings.CommissionPct.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.CommissionPct.format}"/>
+    </af:inputText>
+    <f:facet name="footer">
+      <af:panelGroupLayout id="pgl1">
+        <af:button text="Submit" id="b1" action="submit"/>
+        <af:button text="Cancel" id="b2" action="cancel"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+</ui:composition>

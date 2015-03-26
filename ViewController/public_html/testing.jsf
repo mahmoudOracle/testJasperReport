@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="testing.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelSplitter orientation="horizontal" splitterPosition="235" id="ps1">
+                <f:facet name="first">
+                    <af:inputText label="value" id="it1" value="#{pageFlowScope.xxx}" autoSubmit="true"/>
+                </f:facet>
+                <f:facet name="second">
+                    <af:region value="#{bindings.testexecwithparam1.regionModel}" id="r1"/>
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>

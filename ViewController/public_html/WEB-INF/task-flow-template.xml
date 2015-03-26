@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="task-flow-template">
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <exception-handler>ExceptionHandler</exception-handler>
+    <view id="ExceptionHandler">
+      <page>/ExceptionHandler.jsff</page>
+    </view>
+    <use-page-fragments/>
+    <visibility>
+      <url-invoke-disallowed/>
+    </visibility>
+  </task-flow-template>
+</adfc-config>

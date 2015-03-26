@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="data">
+    <page>/data.jsf</page>
+  </view>
+  <view id="detail">
+    <page>/detail.jsf</page>
+  </view>
+  <control-flow-rule id="__4">
+    <from-activity-id>data</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>result</from-outcome>
+      <to-activity-id>detail</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>jasperReportBean</managed-bean-name>
+    <managed-bean-class>view.beans.JasperReportBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>waelAbdeenJasper</managed-bean-name>
+    <managed-bean-class>view.beans.WaelAbdeenJasper</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>samehNassarBean</managed-bean-name>
+    <managed-bean-class>view.SamehNassarBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

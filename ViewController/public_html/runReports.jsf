@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="runReports.jsf" id="d1">
+        <af:form id="f1" targetFrame="_blank">
+            <af:button text="Run Report" id="b1" actionListener="#{jasperReportBean.runActionReport}" partialSubmit="false"/>
+            <af:button text="JasperWaelAbdeen " id="b2" action="#{waelAbdeenJasper.runJasperWaelAbdeen}"/>
+            <af:button text="SamehNassar Jasper" id="b3" action="#{samehNassarBean.runReportSamehNassar_action}"/>
+            <af:commandButton text="Submit" id="cb5" action="#{jasperReportBean.runReport_action}"/>
+            <af:button text="Anothertry" id="b4" action="#{jasperReportBean.runReport_action123}" partialSubmit="false"
+                       targetFrame="_blank"/>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:samehNassarBean-->
+</f:view>

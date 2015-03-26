@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="data.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelSplitter orientation="horizontal" splitterPosition="100" id="ps1">
+                <f:facet name="first"/>
+                <f:facet name="second">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.deptIdVar.inputValue}" label="#{bindings.deptIdVar.hints.label}"
+                                      required="#{bindings.deptIdVar.hints.mandatory}"
+                                      columns="#{bindings.deptIdVar.hints.displayWidth}"
+                                      maximumLength="#{bindings.deptIdVar.hints.precision}"
+                                      shortDesc="#{bindings.deptIdVar.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.deptIdVar.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.deptIdVar.format}"/>
+                        </af:inputText>
+                        <af:button actionListener="#{bindings.ExecuteWithParams.execute}" text="ExecuteWithParams"
+                                   disabled="#{!bindings.ExecuteWithParams.enabled}" id="b1" action="result"/>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:panelSplitter>
+        </af:form>
+    </af:document>
+</f:view>
